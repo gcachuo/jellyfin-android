@@ -72,7 +72,7 @@ fun ServerSelection(
     val coroutineScope = rememberCoroutineScope()
     val keyboardController = LocalSoftwareKeyboardController.current
     var serverSelectionMode by remember { mutableStateOf(ServerSelectionMode.ADDRESS) }
-    var hostname by remember { mutableStateOf("http://easymovie.lat") }
+    var hostname by remember { mutableStateOf("https://server.easymovie.lat") }
     val serverSuggestions = remember { mutableStateListOf<ServerSuggestion>() }
     var checkUrlState by remember<MutableState<CheckUrlState>> { mutableStateOf(CheckUrlState.Unchecked) }
     var externalError by remember { mutableStateOf(showExternalConnectionError) }
