@@ -72,7 +72,7 @@ fun ServerSelection(
     val coroutineScope = rememberCoroutineScope()
     val keyboardController = LocalSoftwareKeyboardController.current
     var serverSelectionMode by remember { mutableStateOf(ServerSelectionMode.ADDRESS) }
-    var hostname by remember { mutableStateOf("") }
+    var hostname by remember { mutableStateOf("http://easymovie.lat") }
     val serverSuggestions = remember { mutableStateListOf<ServerSuggestion>() }
     var checkUrlState by remember<MutableState<CheckUrlState>> { mutableStateOf(CheckUrlState.Unchecked) }
     var externalError by remember { mutableStateOf(showExternalConnectionError) }
@@ -200,6 +200,7 @@ private fun AddressSelection(
                 text = stringResource(R.string.choose_server_button_text),
                 onClick = onDiscoveryClick,
             )
+            onSubmit();
         } else {
             CenterRow {
                 CircularProgressIndicator(modifier = Modifier.padding(top = 16.dp, bottom = 8.dp))
